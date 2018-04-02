@@ -15,20 +15,20 @@ int divisors(int n) {
         n /= 2;
     }
     
-    int full = exp;
+    int sum = exp;
     for (int i = 3; i <= sqrt(n); i += 2) {
         exp = 0;
         while (n % i == 0) {
             n /= i;
             exp++;
         }
-        full *= exp + 1;
+        sum *= exp + 1;
     }
 
     if (n > 2)
-        full *= 2;
+        sum *= 2;
     
-    return full;
+    return sum;
 }
 
 int main()
